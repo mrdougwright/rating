@@ -1,0 +1,19 @@
+$baseFontFamily: 'Happy Monkey', cursive;
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
+
+@import 'bootstrap';
+
+@import 'bootstrap-responsive';
+
+.arrow {
+	width: 0; 
+	height: 0; 
+	border-left: 2.25em solid transparent;
+	border-right: 2.25em solid transparent;
+}
+.up {
+	border-bottom: 2.25em solid green;
+}
+.down {
+	border-top: 2.25em solid red;
+}
