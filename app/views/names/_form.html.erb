@@ -1,0 +1,7 @@
+<%= simple_form_for(@name) do |f| %>
+  <%= f.error_notification %>
+  <div>
+    <%= f.input :name, input_html: { rows: "2" }, label: false %>
+    <%= f.button :submit, class: "btn btn-success", value: "submit" %>
+  </div>
+<% end %>

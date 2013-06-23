@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
   def home
-  end
-
-  def ratings
-    
+    @name = Name.new
   end
 end
