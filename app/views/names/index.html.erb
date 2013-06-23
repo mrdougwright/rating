@@ -3,24 +3,16 @@
 
   <table class="table">
     <th>name</th>
-    <th>id</th>
-    <th>date created</th>
     <th>rating</th>
-    <th>vote up</th>
-    <th>vote down</th>
-  <% @names.each do |name| %>
-    <tr>
-      <td><%= name.name %></td>
-      <td><%= name.id %></td>
-      <td><%= name.created_at.to_s :short %></td>
-      <td><%= name.total %></td>
-      <td><%= button_to "increase", action: "rate" %>
-        
-      </td>
-
-    </tr>
-  <% end %>
+    <th>vote</th>
+    <th>vote</th>
+      <% @names.each do |name| %>
+      <tr>
+        <td><%= name.name %></td>
+        <td><%= name.total %></td>
+        <td><%= link_to "up", :controller => :names, :action => "rate", :id => name.id, :up => true %></td>
+        <td><%= link_to "down", :controller => :names, :action => "rate", :id => name.id, :up => false %></td>
+      </tr>
+      <% end %>
   </table>
-
-  <br />
 </div>

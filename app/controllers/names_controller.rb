@@ -1,11 +1,21 @@
 class NamesController < ApplicationController
-  # GET /names
-  # GET /names.json
+  def rate
+    @name = Name.find(params[:id])
+    unless params[:up]
+      @name.decrease_total
+    else
+      @name.increase_total
+    end
 
-  def self.rate
-    increase_total
+    if @name.save
+      redirect_to names_path
+    else
+      redirect_to name_path
+    end
   end
 
+  # GET /names
+  # GET /names.json
   def index
     @names = Name.all
 

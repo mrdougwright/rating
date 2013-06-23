@@ -1,5 +1,5 @@
 Rating::Application.routes.draw do
-  resources :names
-  put 'names' => 'names#rate'
+  resources :names 
+  get 'rate' => 'names'
   root to: 'pages#home'
 end
