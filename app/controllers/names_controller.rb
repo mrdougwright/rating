@@ -13,12 +13,7 @@ class NamesController < ApplicationController
   # GET /names/1
   # GET /names/1.json
   def show
-    @name = Name.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @name }
-    end
+    redirect_to names_path
   end
 
   # GET /names/new
@@ -80,4 +75,12 @@ class NamesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def rate
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
 end
