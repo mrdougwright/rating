@@ -5,12 +5,19 @@
     <th>name</th>
     <th>id</th>
     <th>date created</th>
-    <th>Rate!</th>
+    <th>rating</th>
+    <th>vote up</th>
+    <th>vote down</th>
   <% @names.each do |name| %>
     <tr>
       <td><%= name.name %></td>
       <td><%= name.id %></td>
       <td><%= name.created_at.to_s :short %></td>
+      <td><%= name.total %></td>
+      <td><%= button_to "increase", action: "rate" %>
+        
+      </td>
+
     </tr>
   <% end %>
   </table>

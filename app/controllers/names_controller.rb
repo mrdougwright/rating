@@ -1,6 +1,11 @@
 class NamesController < ApplicationController
   # GET /names
   # GET /names.json
+
+  def self.rate
+    increase_total
+  end
+
   def index
     @names = Name.all
 
@@ -73,13 +78,6 @@ class NamesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to names_url }
       format.json { head :no_content }
-    end
-  end
-
-  def rate
-    respond_to do |format|
-      format.html
-      format.json
     end
   end
 
