@@ -10,8 +10,8 @@
       <tr>
         <td><%= name.name %></td>
         <td><%= name.total %></td>
-        <td><%= link_to "up", :controller => :names, :action => "rate", :id => name.id, :up => true %></td>
-        <td><%= link_to "down", :controller => :names, :action => "rate", :id => name.id %></td>
+        <td><%= link_to "up", controller: :names, action: :rate, id: name.id, up: :true %></td>
+        <td><%= link_to "down", controller: :names, action: :rate, id: name.id %></td>
       </tr>
       <% end %>
   </table>
